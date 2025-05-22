@@ -56,11 +56,11 @@ def generate_image(prompt: str):
                 filename = f"generated_{uuid.uuid4().hex}.{file_ext}"
                 filepath = os.path.join(output_folder, filename)
 
-                # Simpan file
+                # Save file
                 with open(filepath, "wb") as f:
                     f.write(base64.b64decode(encoded))
 
-                # Kembalikan base64
+                # return base64
                 return {
                     "status": "success",
                     "image_base64": encoded,
